@@ -1,0 +1,37 @@
+<div class="container my-5">
+  <h1 class="text-center">Editar Evento</h1>
+
+  <div class="row">
+    <div class="col-6  mx-auto">
+      <form #form="ngForm" (ngSubmit)="ActualizarEvento()" class="d-flex flex-column">
+        <div class="mb-3">
+          <label for="id" class="form-label">Id</label>
+          <input type="number" class="form-control" id="id" readonly name="id" [(ngModel)] = "DetalleEvento.id">
+      </div>
+        <div class="mb-3">
+            <label for="imagen" class="form-label">Url de la imagen</label>
+            <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)] = "DetalleEvento.imagen">
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)] = "DetalleEvento.fecha">
+      </div>
+
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del evento</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)] = "DetalleEvento.nombre">
+    </div>
+
+    <div class="mb-3">
+      <label for="lugar" class="form-label">Lugar</label>
+      <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)] = "DetalleEvento.lugar">
+    </div>
+    <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary mr-5">Guardar</button>
+          <button type="button" class="btn btn-danger"(click)="EliminarEvento(DetalleEvento.id)">Eliminar</button>
+        </div>
+        </form>
+    </div>
+  </div>
+    
+</div>

@@ -1,0 +1,25 @@
+footer{
+  text-align: center;
+  background: url(src/app/componentes/Eventos/lista-eventos/imagenes/bg.jpg);
+  padding: 100px;
+}
+.copyright{
+  color: #FFFFFF;
+  font-size: 13px;
+  margin:  20px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    margin-bottom: 1rem;
+  }
+
+  .upper-images-container {
+    margin-top: 1rem;
+  }
+
+  footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

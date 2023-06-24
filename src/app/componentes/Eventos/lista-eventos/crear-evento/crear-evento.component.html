@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <h1 class="text-center">Agregar nuevo evento</h1>
+
+  <div class="row">
+    <div class="col-6  mx-auto">
+      <form #form=""ngForm (ngSubmit)="CrearEvento()" class="d-flex flex-column">
+        <div class="mb-3">
+            <label for="imagen" class="form-label">Url de la imagen</label>
+            <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)] = "crearEventoRequest.imagen">
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)] = "crearEventoRequest.fecha">
+      </div>
+
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del evento</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)] = "crearEventoRequest.nombre">
+    </div>
+
+    <div class="mb-3">
+      <label for="lugar" class="form-label">Lugar</label>
+      <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)] = "crearEventoRequest.lugar">
+    </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+  </div>
+</div>
