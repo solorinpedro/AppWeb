@@ -1,5 +1,5 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'https://localhost:7038'
+  baseApiUrl: 'http://www.myeventoapp.somee.com'
 };
