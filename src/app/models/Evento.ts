@@ -4,4 +4,5 @@ export interface Evento{
   fecha: string;
   nombre: string;
   lugar: string;
+  cantidadTicket: number;
 }

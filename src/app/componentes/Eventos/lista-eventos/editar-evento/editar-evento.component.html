@@ -26,6 +26,11 @@
       <label for="lugar" class="form-label">Lugar</label>
       <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)] = "DetalleEvento.lugar">
     </div>
+
+    <div class="mb-3">
+      <label for="lugar" class="form-label">Cantidad de Tickets</label>
+      <input type="number" class="form-control" id="lugar" name="CantidadTicket" [(ngModel)] = "DetalleEvento.cantidadTicket">
+    </div>
     <div class="d-flex justify-content-between">
           <button type="submit" class="btn btn-primary mr-5">Guardar</button>
           <button type="button" class="btn btn-danger"(click)="EliminarEvento(DetalleEvento.id)">Eliminar</button>
@@ -33,5 +38,5 @@
         </form>
     </div>
   </div>
-    
+
 </div>

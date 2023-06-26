@@ -18,7 +18,8 @@ export class EditarEventoComponent implements OnInit{
     imagen: '',
     fecha: '',
     nombre: '',
-    lugar: ''
+    lugar: '',
+    cantidadTicket: 0
   };
   ngOnInit(): void {
     this.route.paramMap.subscribe({

@@ -15,7 +15,8 @@ export class CrearEventoComponent implements OnInit{
     imagen: '',
     fecha: '',
     nombre: '',
-    lugar: ''
+    lugar: '',
+    cantidadTicket: 0
   };
   constructor(private eventoService: EventosService, private router:Router){ }
 
