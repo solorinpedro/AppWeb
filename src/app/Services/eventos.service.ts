@@ -19,7 +19,7 @@ export class EventosService {
 
   CrearEvento(crearEventoRequest: Evento): Observable<Evento>{
     crearEventoRequest.id = 0;
-    return this.http.post<Evento>(this.baseApiUrl + '/Eventos/PostEvento',crearEventoRequest);
+    return this.http.post<Evento>(this.baseApiUrl + '/Eventos/PostEventos',crearEventoRequest);
   }
 
   getEvento(id: number): Observable<Evento>{
