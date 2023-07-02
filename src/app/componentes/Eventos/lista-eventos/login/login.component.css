@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom,  #000000, #00008B, #FFD700,black); /* Cambia los colores del gradiente según tus preferencias */
+  background: conic-gradient(#191919 0% 33%, #4045d3 0% 66%, #0a0909 0% 100%); /* Cambia los colores del gradiente según tus preferencias */
   color: white;
 }
 
