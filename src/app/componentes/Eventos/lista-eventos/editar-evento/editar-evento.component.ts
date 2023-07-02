@@ -48,7 +48,10 @@ export class EditarEventoComponent implements OnInit {
   }
 
   ActualizarEvento() {
+
     if (this.camposValidos() && this.DetalleEvento.cantidadTicket > 0) {
+      const formattedFecha = this.formatFecha(this.DetalleEvento.fecha);
+      this.DetalleEvento.fecha = formattedFecha;
       this.eventosService.ActualizarEvento(this.DetalleEvento.id, this.DetalleEvento).subscribe({
         next: (response) => {
           this.router.navigate(['/eventos']);
@@ -77,5 +80,14 @@ export class EditarEventoComponent implements OnInit {
       this.DetalleEvento.nombre !== '' &&
       this.DetalleEvento.lugar !== ''
     );
+  }
+
+  private formatFecha(fecha: string): string {
+    const parts = fecha.split('-');
+    const year = parts[0];
+    const month = parts[1];
+    const day = parts[2];
+
+    return `${day}/${month}/${year}`;
   }
 }

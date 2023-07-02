@@ -55,13 +55,11 @@ export class CrearEventoComponent implements OnInit {
   }
 
   private formatFecha(fecha: string): string {
-    // Obtener las partes de la fecha
     const parts = fecha.split('-');
     const year = parts[0];
     const month = parts[1];
     const day = parts[2];
 
-    // Formatear la fecha en el formato deseado (dd/MM/yyyy)
     return `${day}/${month}/${year}`;
   }
 }
