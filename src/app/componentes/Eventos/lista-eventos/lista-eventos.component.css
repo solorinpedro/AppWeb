@@ -1,5 +1,7 @@
 .container{
-  padding: 25px;
+  padding: 30px;
+  position: relative; /* Agrega posición relativa al contenedor */
+  min-height: calc(100vh - 100px);
 }
 .card-title{
   color: #FFFFFF;
@@ -27,10 +29,12 @@
 .card {
   transition: transform 0.3s;
   background-color: black;
-  border: solid yellow
+  border: solid yellow;
 }
+
 .card:hover {
   transform: scale(1.1);
+  z-index: 2;
 }
 .botonEditar {
   position: absolute;
@@ -50,7 +54,6 @@
   font-size:xx-large;
   font-weight: 800;
 }
-
-body {
-  background:linear-gradient(to bottom,rgb(17, 15, 15),darkblue,black);
+.dark-bg {
+  background: linear-gradient(to bottom, rgb(17, 15, 15), darkblue, black);
 }

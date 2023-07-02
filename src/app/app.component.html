@@ -1,5 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
-
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark custom-navbar" data-bs-theme="dark" *ngIf="authService.isLoggedInStatus()">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,13 +11,21 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="eventos/crear">Crear Evento</a>
         </li>
+        <li class="nav-item">
+          <button class="nav-link btn btn-link" (click)="logout()" routerLink="/login">Logout</button>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-<div>
+
+<div *ngIf="authService.isLoggedInStatus()">
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
-<footer>
+<div *ngIf="!authService.isLoggedInStatus()">
+  <app-login></app-login>
+</div>
+
+<footer class="fixed-bottom" >
   <p class="copyright">© Copyright Solorin App - 2023</p>
 </footer>
