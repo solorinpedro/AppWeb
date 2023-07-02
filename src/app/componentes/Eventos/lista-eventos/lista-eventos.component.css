@@ -1,5 +1,7 @@
 .container{
-  padding: 25px;
+  padding: 30px;
+  position: relative; /* Agrega posición relativa al contenedor */
+  min-height: calc(100vh - 100px);
 }
 .card-title{
   color: #FFFFFF;
@@ -14,15 +16,25 @@
   font-weight:bolder;
   color: #FFFFFF;
 }
-.card-img-top{
-  max-width: 100%; height: 400px;
+
+.card-img-top {
+  height: 300px;; /* Ajusta la altura máxima de la imagen */
+  object-fit: contain; /* Hace que la imagen se ajuste al contenedor sin deformarse */
 }
+
+.col-md-4 {
+  max-width: 350px; /* Ajusta el ancho máximo de las tarjetas */
+}
+
 .card {
   transition: transform 0.3s;
   background-color: black;
+  border: solid yellow;
 }
+
 .card:hover {
   transform: scale(1.1);
+  z-index: 2;
 }
 .botonEditar {
   position: absolute;
@@ -42,6 +54,6 @@
   font-size:xx-large;
   font-weight: 800;
 }
-body {
-  background:linear-gradient(to bottom,rgb(17, 15, 15),darkblue,black);
+.dark-bg {
+  background: linear-gradient(to bottom, rgb(17, 15, 15), darkblue, black);
 }

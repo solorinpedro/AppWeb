@@ -1,0 +1,21 @@
+span{
+  color: red;
+}
+.login-form .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.formulario-container {
+  margin-bottom: 200px;
+  padding-bottom: 120px;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(to bottom,  #000000, #00008B);
+  padding: 20px;
+  color: white;
+  height: 100%;
+}

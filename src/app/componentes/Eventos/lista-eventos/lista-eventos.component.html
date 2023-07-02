@@ -1,24 +1,23 @@
-<body>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4" *ngFor="let evento of eventos">
-      <div class="card" class="card my-3">
-        <a href=""></a>
-        <img class="card-img-top" [src]="evento.imagen" alt="Nombre del evento">
-        <div class="card-body">
-          <h5 class="card-title">{{evento.nombre}}</h5>
-          <h6 class="card-subtitle mb-2" style="color: #FFFFFF;">{{evento.fecha}}</h6>
-          <p class="card-text">{{evento.lugar}}</p>
-          <a [routerLink]= "['/eventos', 'editar', evento.id]"><button class="botonEditar">Editar</button></a>
+<body class="dark-bg">
+  <div class="container">
+    <div class="row  justify-content-center">
+      <div class="col-md-4" *ngFor="let evento of eventos">
+        <div  class="card my-3">
+          <a href=""></a>
+          <img class="card-img-top" [src]="evento.imagen" alt="Nombre del evento">
+          <div class="card-body">
+            <h5 class="card-title">{{evento.nombre}}</h5>
+            <h6 class="card-subtitle mb-2" style="color: #FFFFFF;">{{evento.fecha}}</h6>
+            <p class="card-text">{{evento.lugar}}</p>
+            <a [routerLink]= "['/eventos', 'editar', evento.id]"><button class="botonEditar">Editar</button></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div>
   <div>
-    <p *ngIf="!eventos || eventos.length <= 0 " class="Avaible">No hay eventos disponibles</p>
+    <div>
+      <p *ngIf="!eventos || eventos.length <= 0 " class="Avaible">No hay eventos disponibles</p>
+    </div>
   </div>
-</div>
-</body>
-
+  </body>

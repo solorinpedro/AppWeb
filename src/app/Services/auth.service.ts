@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private isLoggedIn = false;
+  private username = '';
 
-  constructor(private http: HttpClient) { }
-  login(email: string, password: string): Observable<any> {
-    return this.http.post('/Eventos/PostEventos', { email, password });
+  login(username: string, password: string): boolean {
+    if (username === 'admin' && password === 'admin123') {
+      this.isLoggedIn = true;
+      this.username = username;
+      return true;
+    } else {
+      return false;
+    }
   }
-  logout(): Observable<any> {
-    return this.http.post('/Eventos/PostEventos', {});
+
+  logout(): void {
+    this.isLoggedIn = false;
+    this.username = '';
   }
-  register(usuario: any): Observable<any> {
-    return this.http.post('/Eventos/PostEventos', usuario);
+
+  isLoggedInStatus(): boolean {
+    return this.isLoggedIn;
+  }
+
+  getUsername(): string {
+    return this.username;
   }
 }

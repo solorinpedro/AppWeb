@@ -1,42 +1,63 @@
-<div class="container my-5">
-  <h1 class="text-center">Editar Evento</h1>
+<body>
+  <div class="container my-5 formulario-container">
+    <h1 class="text-center">Editar Evento</h1>
 
-  <div class="row">
-    <div class="col-6  mx-auto">
-      <form #form="ngForm" (ngSubmit)="ActualizarEvento()" class="d-flex flex-column">
-        <div class="mb-3">
-          <label for="id" class="form-label">Id</label>
-          <input type="number" class="form-control" id="id" readonly name="id" [(ngModel)] = "DetalleEvento.id">
-      </div>
-        <div class="mb-3">
-            <label for="imagen" class="form-label">Url de la imagen</label>
-            <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)] = "DetalleEvento.imagen">
-        </div>
-        <div class="mb-3">
-          <label for="fecha" class="form-label">Fecha</label>
-          <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)] = "DetalleEvento.fecha">
-      </div>
+    <div class="row">
+      <div class="col-6 mx-auto login-form">
+        <form #form="ngForm" (ngSubmit)="ActualizarEvento()" class="d-flex flex-column">
 
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre del evento</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)] = "DetalleEvento.nombre">
-    </div>
+          <div class="mb-3">
+            <label for="id" class="form-label">Id</label>
+            <input type="number" class="form-control" id="id" readonly name="id" [(ngModel)]="DetalleEvento.id">
+          </div>
 
-    <div class="mb-3">
-      <label for="lugar" class="form-label">Lugar</label>
-      <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)] = "DetalleEvento.lugar">
-    </div>
+          <div class="mb-3">
+            <label for="imagen" class="form-label">Url de la imagen<span class="required-field">*</span></label>
+            <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="DetalleEvento['imagen']" required>
+            <div *ngIf="form.controls['imagen'].invalid && (form.controls['imagen'].dirty || form.controls['imagen'].touched)" class="text-danger">
+              Campo obligatorio
+            </div>
+          </div>
 
-    <div class="mb-3">
-      <label for="lugar" class="form-label">Cantidad de Tickets</label>
-      <input type="number" class="form-control" id="lugar" name="CantidadTicket" [(ngModel)] = "DetalleEvento.cantidadTicket">
-    </div>
-    <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary mr-5">Guardar</button>
-          <button type="button" class="btn btn-danger"(click)="EliminarEvento(DetalleEvento.id)">Eliminar</button>
-        </div>
+          <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha<span class="required-field">*</span></label>
+            <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="DetalleEvento['fecha']" required>
+            <div *ngIf="form.controls['fecha'].invalid && (form.controls['fecha'].dirty || form.controls['fecha'].touched)" class="text-danger">
+              Campo obligatorio
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del evento<span class="required-field">*</span></label>
+            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="DetalleEvento['nombre']" required>
+            <div *ngIf="form.controls['nombre'].invalid && (form.controls['nombre'].dirty || form.controls['nombre'].touched)" class="text-danger">
+              Campo obligatorio
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="lugar" class="form-label">Lugar<span class="required-field">*</span></label>
+            <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)]="DetalleEvento['lugar']" required>
+            <div *ngIf="form.controls['lugar'].invalid && (form.controls['lugar'].dirty || form.controls['lugar'].touched)" class="text-danger">
+              Campo obligatorio
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="CantidadTicket" class="form-label">Cantidad de Tickets<span class="required-field">*</span></label>
+            <input type="number" class="form-control" id="CantidadTicket" name="CantidadTicket" [(ngModel)]="DetalleEvento['cantidadTicket']" required>
+            <div *ngIf="form.controls['CantidadTicket'].invalid && (form.controls['CantidadTicket'].dirty || form.controls['CantidadTicket'].touched)" class="text-danger">
+              Campo obligatorio
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary mr-5">Guardar</button>
+            <button type="button" class="btn btn-danger" (click)="EliminarEvento(DetalleEvento.id)">Eliminar</button>
+          </div>
+
         </form>
+      </div>
     </div>
   </div>
-
-</div>
+</body>

@@ -8,13 +8,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { CrearEventoComponent } from './componentes/Eventos/lista-eventos/crear-evento/crear-evento.component';
 import { FormsModule } from '@angular/forms';
 import { EditarEventoComponent } from './componentes/Eventos/lista-eventos/editar-evento/editar-evento.component';
+import { LoginComponent } from './componentes/Eventos/lista-eventos/login/login.component';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaEventosComponent,
     CrearEventoComponent,
-    EditarEventoComponent
+    EditarEventoComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,7 @@ import { EditarEventoComponent } from './componentes/Eventos/lista-eventos/edita
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

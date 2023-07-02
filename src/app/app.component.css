@@ -1,12 +1,25 @@
-footer{
-  text-align: center;
-  background: url(src/app/componentes/Eventos/lista-eventos/imagenes/bg.jpg);
-  padding: 100px;
+.custom-navbar {
+  position: relative;
+  z-index: 9999;
 }
-.copyright{
+
+footer{
+  position: fixed; /* Cambia la posición a absoluta */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  height: 100px;
+}
+
+
+footer .copyright{
   color: #FFFFFF;
   font-size: 13px;
   margin:  20px;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
