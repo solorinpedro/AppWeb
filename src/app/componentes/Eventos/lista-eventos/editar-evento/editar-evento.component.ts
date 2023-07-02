@@ -19,7 +19,7 @@ export class EditarEventoComponent implements OnInit{
     fecha: '',
     nombre: '',
     lugar: '',
-    cantidadTicket: 0
+    cantidadTicket: 0,
   };
   ngOnInit(): void {
     this.route.paramMap.subscribe({

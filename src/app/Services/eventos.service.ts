@@ -30,6 +30,6 @@ export class EventosService {
       return this.http.put<Evento>(this.baseApiUrl + '/Eventos/PutEventos' + id, ActualizarEventoRequest)
   }
   EliminarEvento(id: number): Observable<Evento>{
-    return this.http.delete<Evento>(this.baseApiUrl + '/Eventos/DeleteEvento' + id)
+    return this.http.delete<Evento>(this.baseApiUrl + '/Eventos/DeleteEventos' + id)
   }
 }
