@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Evento } from 'src/app/models/Evento';
 import { EventosService } from 'src/app/Services/eventos.service';
+
 
 @Component({
   selector: 'app-crear-evento',
   templateUrl: './crear-evento.component.html',
   styleUrls: ['./crear-evento.component.css']
 })
-export class CrearEventoComponent implements OnInit{
+export class CrearEventoComponent implements OnInit {
 
   crearEventoRequest: Evento = {
     id: 0,
@@ -18,21 +19,41 @@ export class CrearEventoComponent implements OnInit{
     lugar: '',
     cantidadTicket: 0
   };
-  constructor(private eventoService: EventosService, private router:Router){ }
+  errorMessage: string = '';
+
+  constructor(private eventoService: EventosService, private router: Router) { }
 
   ngOnInit(): void {
 
   }
-  CrearEvento(){
-    const formattedFecha = this.formatFecha(this.crearEventoRequest.fecha);
-    this.crearEventoRequest.fecha = formattedFecha;
-    this.eventoService.CrearEvento(this.crearEventoRequest)
-    .subscribe({
-      next:(eventos) => {
-        this.router.navigate(['/eventos'])
-      }
-    });
+
+  CrearEvento() {
+    if (this.camposValidos() && this.crearEventoRequest.cantidadTicket > 0) {
+      const formattedFecha = this.formatFecha(this.crearEventoRequest.fecha);
+      this.crearEventoRequest.fecha = formattedFecha;
+      this.eventoService.CrearEvento(this.crearEventoRequest)
+        .subscribe({
+          next: (eventos) => {
+            this.router.navigate(['/eventos']);
+          },
+          error: (error) => {
+            this.errorMessage = 'Ocurrió un error al crear el evento.';
+          }
+        });
+    } else {
+      this.errorMessage = 'Por favor, complete todos los campos';
+    }
   }
+
+  private camposValidos(): boolean {
+    return (
+      this.crearEventoRequest.imagen !== '' &&
+      this.crearEventoRequest.fecha !== '' &&
+      this.crearEventoRequest.nombre !== '' &&
+      this.crearEventoRequest.lugar !== ''
+    );
+  }
+
   private formatFecha(fecha: string): string {
     // Obtener las partes de la fecha
     const parts = fecha.split('-');
